@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Fire Alerts{% endblock %}
+
+{% block content %}
+<section class="card">
+    <h2>Fire Alerts</h2>
+    <p>Set fire alerts for your desired region.</p>
+    {% if confirmation_message %}
+        <div class="alert alert-success">
+            <strong>Success!</strong> {{ confirmation_message }}
+        </div>
+    {% endif %}
+    <form method="POST" action="/alerts" class="styled-form">
+        <label for="region">Region:</label>
+        <input type="text" id="region" name="region" required>
+
+        <label for="severity">Severity:</label>
+        <select id="severity" name="severity">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+
+        <label for="notification">Notification:</label>
+        <select id="notification" name="notification">
+            <option value="SMS">SMS</option>
+            <option value="Email">Email</option>
+        </select>
+
+        <button type="submit" class="cta-btn">Set Alert</button>
+    </form>
+</section>
+<section class="card">
+    <h3>Current Alerts</h3>
+    <ul class="alerts-list">
+        {% for alert in alerts %}
+            <li><strong>Region:</strong> {{ alert.region }} | 
+                <strong>Severity:</strong> <span class="risk-{{ alert.severity|lower }}">{{ alert.severity }}</span> | 
+                <strong>Notification:</strong> {{ alert.notification }}</li>
+        {% else %}
+            <li>No alerts set yet.</li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

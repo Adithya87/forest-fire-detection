@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<section class="card">
+    <h2>Contact Us</h2>
+    <form method="POST" action="/contact" class="styled-form">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit" class="cta-btn">Send Message</button>
+    </form>
+</section>
+<section class="features">
+    <div class="feature">
+        <h3>Email</h3>
+        <p>info@forestfiredetection.org</p>
+    </div>
+    <div class="feature">
+        <h3>Phone</h3>
+        <p>+1-800-555-1234</p>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,212 @@
+/* Card and Feature Styles for All Pages */
+.card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    padding: 30px 35px;
+    margin: 30px auto 30px auto;
+    max-width: 700px;
+}
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0 20px 0;
+    flex-wrap: wrap;
+}
+.feature {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 20px 25px;
+    max-width: 300px;
+    text-align: center;
+    flex: 1 1 220px;
+}
+.feature h3 {
+    color: #ff5733;
+    margin-bottom: 10px;
+}
+
+/* Styled Form */
+.styled-form label {
+    display: block;
+    margin: 12px 0 4px 0;
+    font-weight: 500;
+}
+.styled-form input,
+.styled-form select,
+.styled-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+.styled-form textarea {
+    resize: vertical;
+}
+
+/* Alerts and Results */
+.alerts-list, .tips-list {
+    list-style: none;
+    padding: 0;
+}
+.alerts-list li, .tips-list li {
+    background: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 12px 18px;
+    border-radius: 7px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.result-card {
+    background: #f7f7f7;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+}
+.risk-high {
+    color: #d32f2f;
+    font-weight: bold;
+}
+.risk-medium {
+    color: #ff9800;
+    font-weight: bold;
+}
+.risk-low {
+    color: #388e3c;
+    font-weight: bold;
+}
+.probability {
+    color: #1976d2;
+    font-weight: bold;
+}
+/* Hero Section Styles */
+.hero {
+    background: linear-gradient(rgba(255,87,51,0.85), rgba(255,87,51,0.7)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    color: #fff;
+    padding: 60px 0 40px 0;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 30px;
+}
+.hero-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.hero-content .subtitle {
+    font-size: 1.3em;
+    margin-bottom: 25px;
+}
+.cta-btn {
+    background: #fff;
+    color: #ff5733;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.2s, color 0.2s;
+    display: inline-block;
+}
+.cta-btn:hover {
+    background: #ff5733;
+    color: #fff;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0 20px 0;
+    flex-wrap: wrap;
+}
+.feature {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 25px 30px;
+    max-width: 300px;
+    text-align: center;
+    flex: 1 1 220px;
+}
+.feature h3 {
+    color: #ff5733;
+    margin-bottom: 10px;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Minimum height to cover the entire viewport */
+    display: flex;
+    flex-direction: column; /* Makes the footer stick to the bottom */
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+header {
+    background-color: #ff5733;
+    padding: 10px;
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+    margin: 20px 0;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+}
+
+form {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 50%;
+    flex-grow: 1; /* Takes up remaining space so footer stays at the bottom */
+}
+
+form input, form button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 10px;
+}
+
+form button {
+    background-color: #ff5733;
+    color: white;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #e64e2c;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: auto; /* Pushes footer to the bottom */
+}

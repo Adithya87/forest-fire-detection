@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Real-Time Fire Monitoring{% endblock %}
+
+{% block content %}
+<section class="card">
+    <h2>Real-Time Fire Monitoring</h2>
+    <p>Monitor fires in real-time from satellite data and sensors. Zoom into specific regions for detailed fire activity.</p>
+</section>
+<section class="map-section">
+    <div id="map" style="height: 500px; width: 100%; border-radius: 12px; overflow: hidden;"></div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+<script>
+    // Initialize the map
+    var map = L.map('map').setView([37.7749, -122.4194], 5); // Default view (latitude, longitude)
+
+    // Set up the tile layer (OpenStreetMap)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Add fire locations (this should be dynamic data in the future)
+    var fireData = [
+        { lat: 37.7749, lon: -122.4194, severity: 'High' },
+        { lat: 34.0522, lon: -118.2437, severity: 'Low' },
+    ];
+
+    fireData.forEach(function(fire) {
+        var color = fire.severity === 'High' ? 'red' : 'green';
+        L.circle([fire.lat, fire.lon], {
+            color: color,
+            radius: 5000
+        }).addTo(map).bindPopup('Fire Severity: ' + fire.severity);
+    });
+</script>
+{% endblock %}

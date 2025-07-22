@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Prediction - Forest Fire Detection{% endblock %}
+
+{% block content %}
+<section class="card">
+    <h2>Forest Fire Probability Prediction</h2>
+    <form method="POST" action="/prediction" class="styled-form">
+        <label for="temp">Temperature (°C):</label>
+        <input type="number" id="temp" name="temp" step="any" required>
+
+        <label for="humidity">Humidity (%):</label>
+        <input type="number" id="humidity" name="humidity" step="any" required>
+
+        <label for="wind">Wind Speed (km/h):</label>
+        <input type="number" id="wind" name="wind" step="any" required>
+
+        <label for="rain">Rainfall (mm):</label>
+        <input type="number" id="rain" name="rain" step="any" required>
+
+        <button type="submit" class="cta-btn">Predict Fire Probability</button>
+    </form>
+    {% if fire_risk %}
+    <div class="result-card">
+        <h3>Fire Risk: <span class="risk-{{ fire_risk|lower }}">{{ fire_risk }}</span></h3>
+        <h3>Probability of Fire Occurrence: <span class="probability">{{ probability * 100 }}%</span></h3>
+    </div>
+    {% endif %}
+</section>
+{% endblock %}

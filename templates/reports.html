@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Reports{% endblock %}
+
+{% block content %}
+<section class="card">
+    <h2>Fire Reports and Analytics</h2>
+    <p>Explore detailed reports and charts about forest fires over the years.</p>
+</section>
+<section class="card">
+    <h3>Fire Trends</h3>
+    <div id="chart-container">
+        <p><strong>Visualization of fire outbreaks over the past 5 years</strong></p>
+        <canvas id="fireTrendChart" width="400" height="200"></canvas>
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var ctx = document.getElementById('fireTrendChart').getContext('2d');
+    var fireTrendChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['2019', '2020', '2021', '2022', '2023'],
+            datasets: [{
+                label: 'Number of Fires',
+                data: [120, 150, 180, 130, 200],  // Example data
+                borderColor: 'rgba(255, 99, 132, 1)',
+                fill: false
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+{% endblock %}
